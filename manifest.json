@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "LiveModAssist",
-  "version": "1.1",
+  "version": "1.0",
   "description": "モデレータ用のライブ中のコメントを監視しハイライトする",
   "permissions": ["storage", "scripting"],
   "host_permissions": ["<all_urls>"],

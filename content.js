@@ -8,7 +8,6 @@
         chrome.storage.sync.get(null, resolve);
       });
     } catch (e) {
-      console.error("ModAssist: 設定の取得中にエラー", e);
       return {};
     }
   }
@@ -57,6 +56,7 @@
     });
   }
 
+  // コメントのハイライト
   function highlightComment(node) {
     const messageNode =
       node.querySelector("#message") || node.querySelector(".message") || node;

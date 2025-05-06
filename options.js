@@ -26,15 +26,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+  // インポートボタン
   enableAdvanced.addEventListener("change", () => {
     groupContainer.style.display = enableAdvanced.checked ? "block" : "none";
     highlightWords.disabled = enableAdvanced.checked;
   });
 
+  // グループ追加ボタン
   addGroupBtn.addEventListener("click", () => {
     addGroup();
   });
 
+  // 保存
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const newSettings = {
@@ -60,12 +63,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       newSettings.highlightColor = highlightColor.value;
       newSettings.textColor = textColor.value;
     }
-
-    chrome.storage.sync.set(newSettings, () => {
-      alert("設定を保存しました。ページをリロードしてください。");
-    });
   });
 
+  // json出力
   exportBtn.addEventListener("click", async () => {
     const data = await new Promise((resolve) =>
       chrome.storage.sync.get(null, resolve)
@@ -87,8 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const file = e.target.files[0];
     if (!file) return;
 
-    // ファイルを選択した際に確認メッセージを表示
-    const confirmImport = confirm("この設定ファイルをインポートしますか？");
     if (confirmImport) {
       const text = await file.text();
       try {
@@ -102,6 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+    // グループ追加
   function addGroup(data = {}, index = Date.now()) {
     const group = document.createElement("div");
     group.className = "group";
@@ -109,6 +108,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     group.style.marginBottom = "10px";
     group.style.padding = "10px";
 
+    // グループ内HTML
     const header = document.createElement("div");
     header.innerHTML = `
       <strong>グループ:</strong> <input type="text" class="groupName" value="${
