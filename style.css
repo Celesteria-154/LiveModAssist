@@ -1,0 +1,144 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  width: 500px;
+  max-width: 100%;
+  background-color: #f9f9f9;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+#basicSettings {
+  padding-right: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type="color"],
+select {
+  width: 150px;
+  margin-top: 5px;
+}
+
+#simpleSettings {
+  margin-bottom: 20px;
+}
+
+#groupsContainer {
+  margin-top: 20px;
+}
+
+.group {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.group.collapsed .groupContent {
+  display: none;
+}
+
+.group.collapsed::after {
+  content: "（折りたたみ中）";
+  font-size: 12px;
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+
+button[type="submit"],
+button#exportSettings {
+  margin-top: 5px;
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button[type="submit"]:hover,
+button#exportSettings:hover {
+  background-color: #0056b3;
+}
+
+button#addGroup {
+  margin-top: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+button.removeBtn,
+button.toggleBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+button.removeBtn {
+  color: red;
+  float: right;
+}
+
+button.toggleBtn {
+  float: right;
+  color: #333;
+}
+
+.import-label {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+}
+
+.import-label:hover {
+  background-color: #0056b3;
+}
+
+#importInput {
+  display: none;
+}
+
+.btn {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1669c1;
+}

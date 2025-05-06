@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ModAssist 設定</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>ModAssist 設定</h1>
+    <form id="settingsForm">
+      <label>
+        <input type="checkbox" id="enableAdvanced" />
+        詳細モードを有効にする
+      </label>
+
+      <div id="basicSettings">
+        <label>強調表示ワード（カンマ区切り）</label>
+        <textarea id="highlightWords" rows="2"></textarea>
+
+        <label>背景色</label>
+        <input type="color" id="highlightColor" />
+
+        <label>文字色</label>
+        <input type="color" id="textColor" />
+      </div>
+
+      <div id="groupContainer" style="display: none"></div>
+      <button type="button" id="addGroupBtn" style="display: none">
+        ＋ グループ追加
+      </button>
+
+      <button type="submit">保存</button>
+      <div
+        style="margin-top: 10px; display: flex; gap: 10px; align-items: center"
+      >
+        <button id="exportBtn" class="btn">設定をエクスポート</button>
+        <label class="btn" style="margin: 0">
+          設定をインポート
+          <input type="file" id="importInput" style="display: none" />
+        </label>
+      </div>
+    </form>
+    <script src="options.js"></script>
+  </body>
+</html>
